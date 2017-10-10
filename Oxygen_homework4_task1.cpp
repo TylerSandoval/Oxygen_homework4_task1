@@ -9,7 +9,7 @@ class HouseInfo
 {
 private:
     int streetNum;
-    float price;
+    double price;
     string streetName;
 public:
     void setInfo()
