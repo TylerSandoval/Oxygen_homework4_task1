@@ -26,10 +26,10 @@ public:
         cin.ignore(); // flush buffer for the string input
     }
 
-
+    void ComparePrices(HouseInfo h[MAX]);   // Declared inside class, so it can access variables
 };
 // Prototypes
-void ComparePrices(HouseInfo h[MAX]);
+
 
 // Main program
 int main()
@@ -41,11 +41,16 @@ int main()
         h[i].setInfo();
     }
 
+    h[MAX].ComparePrices(h);        // Call ComparePrices
+
 
     return 0;
 }
 // Function Definitions
-void ComparePrices(HouseInfo h[MAX])
+void HouseInfo::ComparePrices(HouseInfo h[MAX])     // ComparePrices is within HouseInfo class
 {
-
+    for (int i = 0; i < MAX; i++)
+    {
+        cout << "House #" << i+1 << " at " << h[i].streetNum << " " << h[i].streetName << " for $" << h[i].price << endl;
+    }
 }
