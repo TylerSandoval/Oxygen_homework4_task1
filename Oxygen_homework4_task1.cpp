@@ -25,6 +25,8 @@ public:
         cin >> price;
         cin.ignore(); // flush buffer for the string input
     }
+
+
 };
 // Prototypes
 void ComparePrices(HouseInfo h[MAX]);
@@ -32,8 +34,13 @@ void ComparePrices(HouseInfo h[MAX]);
 // Main program
 int main()
 {
-    HouseInfo h1;
-    h1.setInfo();
+    HouseInfo h[MAX];
+
+    for (int i = 0; i < MAX; i++)
+    {
+        h[i].setInfo();
+    }
+
 
     return 0;
 }
