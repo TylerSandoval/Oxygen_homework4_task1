@@ -16,25 +16,29 @@ public:
     {
         cout << "Enter street number: " << endl;
         cin >> streetNum;
-        cout << "Enter house price: " << endl;
-        cin >> price;
+        cin.ignore();   // Flush buffer
+
         cout << "Enter street name: " << endl;
         getline(cin, streetName);
 
+        cout << "Enter house price: " << endl;
+        cin >> price;
         cin.ignore(); // flush buffer for the string input
     }
 };
 // Prototypes
-void ComparePrices(HouseInfo h[]);
+void ComparePrices(HouseInfo h[MAX]);
 
 // Main program
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    HouseInfo h1;
+    h1.setInfo();
+
     return 0;
 }
 // Function Definitions
-void ComparePrices(HouseInfo h[])
+void ComparePrices(HouseInfo h[MAX])
 {
 
 }
