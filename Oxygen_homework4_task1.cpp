@@ -17,6 +17,7 @@ public:
     void setInfo()
     {
         cout << "\nEnter info for house #" << count << endl;
+
         cout << "Enter street number: " << endl;
         cin >> streetNum;
         cin.ignore();   // Flush buffer
@@ -56,12 +57,20 @@ int main()
 void HouseInfo::ComparePrices(HouseInfo h[MAX])     // ComparePrices is within HouseInfo class
 {
     double hPrices[MAX];
+
     cout << "\nYour market analysis is as follows: " << endl;
     for (int i = 0; i < MAX; i++)
     {
         cout << "House #" << i+1 << " at " << h[i].streetNum << " " << h[i].streetName << " for $" << h[i].price << endl;
-        hPrices[i] = h[i].price;
+        hPrices[i] = h[i].price; // Add the house price to a separate array
     }
-    double min = *std::min_element(hPrices, hPrices + MAX);
-    cout << "\nYou should buy: " << min << endl;
+    double min = *std::min_element(hPrices, hPrices + MAX); // Determine lowest house price
+
+    for (int i = 0; i < MAX; i++)
+    {
+        if (h[i].price == min)  // If the house price is equal to the lowest house price
+        {
+            cout << "\nYou should buy house #" << i+1;
+        }
+    }
 }
