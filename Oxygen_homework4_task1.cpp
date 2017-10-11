@@ -32,7 +32,7 @@ public:
         count++;
     }
 
-    void ComparePrices(HouseInfo h[MAX]);   // Declared inside class, so it can access variables
+    void ComparePrices(HouseInfo h[MAX]);   // Declared inside class, so it can access variables  --We need to make this an outside function
 };
 int HouseInfo::count = 1;
 // Prototypes
